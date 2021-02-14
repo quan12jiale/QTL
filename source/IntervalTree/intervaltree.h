@@ -84,7 +84,7 @@ IntervalTree<Key, T>::IntervalTree(const Container& intervals)
 
 	for (const auto& iv : intervals)
 	{
-		this->all_intervals->insert(iv);
+		this->all_intervals.insert(iv);
 	}
 	this->top_node = IntervalTreeNode<Key, T>::from_intervals(this->all_intervals.toList());
 	for (const auto& iv : this->all_intervals)
