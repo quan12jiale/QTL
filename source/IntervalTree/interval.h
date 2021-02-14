@@ -1,6 +1,6 @@
 #pragma once
 #include <QSet>
-#include "QtCore\qtypetraits.h"
+#include <QtCore/qtypetraits.h>
 
 template <class Key>
 static inline bool myFuzzyCompare(const Key& p1, const Key& p2)
@@ -8,8 +8,14 @@ static inline bool myFuzzyCompare(const Key& p1, const Key& p2)
 	return qAbs(p1 - p2) * 1000000. <= 1.;
 }
 
+struct DummyIntervalData
+{
+	bool operator==(const DummyIntervalData&) const { return true; }
+	bool operator<(const DummyIntervalData&) const { return false; }
+};
+
 /*
-Key可以是浮点数、整数、以及其它支持小于、大于、等于、小于等于、大于等于运算符的类型，如CVector2d
+Key可以是浮点数、整数、以及其它支持小于、大于、等于、小于等于、大于等于运算符、qHash的类型，如CVector2d
 T可以是支持等于、小于的类型
 */
 template <class Key, class T>
@@ -37,7 +43,7 @@ public:
 	// #注意: qHash函数需要在.h文件中的类中实现
 	friend uint qHash(const Interval<Key, T>& key, uint seed)
 	{
-		return qHash(key.begin, seed) ^ key.end;
+		return qHash(key.begin, seed) ^ qHash(key.end, seed);
 	}
 	bool operator==(const Interval& other) const;
 
