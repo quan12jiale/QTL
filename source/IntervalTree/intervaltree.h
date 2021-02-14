@@ -71,6 +71,7 @@ IntervalTree<Key, T>* IntervalTree<Key, T>::from_tuples(const QList<Key>& begins
 template <class Key, class T>
 IntervalTree<Key, T>::IntervalTree()
 {
+	this->top_node = nullptr;
 	this->clear();
 }
 
@@ -78,6 +79,7 @@ template <class Key, class T>
 template <typename Container>
 IntervalTree<Key, T>::IntervalTree(const Container& intervals)
 {
+	this->top_node = nullptr;
 	this->clear();
 
 	for (const auto& iv : intervals)
@@ -94,10 +96,7 @@ IntervalTree<Key, T>::IntervalTree(const Container& intervals)
 template <class Key, class T>
 IntervalTree<Key, T>::~IntervalTree()
 {
-	if (this->top_node)
-	{
-		delete this->top_node;
-	}
+	this->clear();
 }
 
 template <class Key, class T>
