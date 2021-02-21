@@ -72,16 +72,13 @@ template <class Key, class T>
 IntervalTree<Key, T>::IntervalTree()
 {
 	this->top_node = nullptr;
-	this->clear();
 }
 
 template <class Key, class T>
 template <typename Container>
 IntervalTree<Key, T>::IntervalTree(const Container& intervals)
+	: IntervalTree()
 {
-	this->top_node = nullptr;
-	this->clear();
-
 	for (const auto& iv : intervals)
 	{
 		this->all_intervals.insert(iv);
