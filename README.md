@@ -3,10 +3,10 @@ QT源码剖析
 
 ## 功能列表
 
+* IntervalTree
+* moc
 * [QSharedMemory](#QSharedMemory)
-* QMap
-* QHash
-* QList
+
 
 <a id="QSharedMemory"></a>
 

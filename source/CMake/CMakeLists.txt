@@ -61,8 +61,9 @@ find_package(Qt5Gui REQUIRED )
 find_package(Qt5Widgets REQUIRED )
 
 add_subdirectory(IntervalTree)
+add_subdirectory(moc)
 add_subdirectory(SharedMemory)
 
 
 # …Ë÷√∆Ù∂ØœÓ
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT IntervalTree)
+set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT moc)
