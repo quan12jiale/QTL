@@ -41,8 +41,8 @@
 
 QT_BEGIN_NAMESPACE
 
-#include "ppkeywords.cpp"
-#include "keywords.cpp"
+#include "ppkeywords.c"
+#include "keywords.c"
 
 // transform \r\n into \n
 // \r into \n (os9 style)
