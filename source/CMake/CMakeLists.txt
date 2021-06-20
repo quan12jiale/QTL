@@ -63,7 +63,7 @@ find_package(Qt5Widgets REQUIRED )
 add_subdirectory(IntervalTree)
 add_subdirectory(moc)
 add_subdirectory(SharedMemory)
-
+add_subdirectory(SmartPointer)
 
 # …Ë÷√∆Ù∂ØœÓ
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT moc)
+set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT SmartPointer)
