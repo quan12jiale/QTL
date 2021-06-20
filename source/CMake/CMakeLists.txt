@@ -64,6 +64,7 @@ add_subdirectory(IntervalTree)
 add_subdirectory(moc)
 add_subdirectory(SharedMemory)
 add_subdirectory(SmartPointer)
+add_subdirectory(windeployqt)
 
 # …Ë÷√∆Ù∂ØœÓ
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT SmartPointer)
+set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT windeployqt)
